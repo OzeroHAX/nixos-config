@@ -8,6 +8,7 @@
       ./ecp.nix
       ./packages.nix
       ./de.nix
+      ./gaming.nix
     ];
 
   boot = {

@@ -33,6 +33,9 @@
     xorg.xhost
     usbutils
     kdePackages.filelight
+
+    # Запись и стриминг
+    gpu-screen-recorder-gtk
   ];
 
   # Программы
