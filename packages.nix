@@ -9,7 +9,7 @@
   # Системные пакеты
   environment.systemPackages = with pkgs; [
     # Терминал
-    wezterm
+    ghostty
     
     # Разработка
     git
@@ -17,7 +17,6 @@
     nodejs
     bun
     uv
-    cudaPackages.cudatoolkit
     
     # Контейнеры
     docker-compose
@@ -27,15 +26,14 @@
     # Десктоп
     google-chrome
     telegram-desktop
+    libreoffice-qt
     
     # Утилиты
     throne
     xorg.xhost
     usbutils
     kdePackages.filelight
-
-    # Запись и стриминг
-    gpu-screen-recorder-gtk
+    host-spawn
   ];
 
   # Программы
