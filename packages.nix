@@ -17,6 +17,7 @@
     nodejs
     bun
     uv
+    python3
     
     # Контейнеры
     docker-compose
@@ -29,6 +30,7 @@
     libreoffice-qt
     
     # Утилиты
+    ripgrep
     throne
     xorg.xhost
     usbutils
@@ -55,5 +57,20 @@
     enable = true;
     dockerCompat = true;
     dockerSocket.enable = true; 
+  };
+
+  # Ollama - локальный LLM сервер с GPU ускорением
+  services.ollama = {
+    enable = true;
+    acceleration = "cuda";
+  };
+
+  systemd.services.ollama.environment = {
+    # Parallel embedding requests (increase to match GPU capacity)
+    OLLAMA_NUM_PARALLEL = "4";
+    # Keep model in memory between requests
+    OLLAMA_KEEP_ALIVE = "10m";
+    # Limit number of models loaded at once
+    OLLAMA_MAX_LOADED_MODELS = "1";
   };
 }
