@@ -27,16 +27,23 @@
   time.timeZone = "Europe/Moscow";
   i18n.defaultLocale = "en_US.UTF-8";
   
-  hardware = {
-    nvidia-container-toolkit.enable = true;
-    nvidia = {
-      modesetting.enable = true;
-      open = false;
-    };
-    graphics.enable = true;
+  hardware.graphics = {
+    enable = true;
+
+    package = pkgs.libglvnd;
+    package32 = pkgs.pkgsi686Linux.libglvnd;
+
+    extraPackages = with pkgs; [
+      mesa
+      rocmPackages.clr.icd
+    ];
+
+    extraPackages32 = with pkgs.pkgsi686Linux; [
+      mesa
+    ];
   };
 
-  services.xserver.videoDrivers = [ "nvidia" ];
+  services.xserver.videoDrivers = [ "amdgpu" ];
 
   security.sudo.wheelNeedsPassword = true;  
 
@@ -49,4 +56,3 @@
   system.stateVersion = "25.11";
 
 }
-

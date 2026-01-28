@@ -36,6 +36,7 @@
     usbutils
     kdePackages.filelight
     host-spawn
+    appimage-run
   ];
 
   # Программы
@@ -62,7 +63,7 @@
   # Ollama - локальный LLM сервер с GPU ускорением
   services.ollama = {
     enable = true;
-    acceleration = "cuda";
+    acceleration = "rocm";
   };
 
   systemd.services.ollama.environment = {
