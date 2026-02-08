@@ -28,6 +28,7 @@
     google-chrome
     telegram-desktop
     libreoffice-qt
+    vlc
     
     # Утилиты
     ripgrep
