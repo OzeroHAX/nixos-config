@@ -29,15 +29,20 @@
     telegram-desktop
     libreoffice-qt
     vlc
+    remmina
     
     # Утилиты
     ripgrep
+    jq
     throne
     xorg.xhost
     usbutils
     kdePackages.filelight
     host-spawn
     appimage-run
+    openssl
+    ffmpeg
+    v4l-utils
   ];
 
   # Программы
