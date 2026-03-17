@@ -31,6 +31,9 @@
     vlc
     remmina
     
+    # Razer
+    polychromatic
+
     # Утилиты
     ripgrep
     jq

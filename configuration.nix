@@ -51,11 +51,16 @@
 
   services.xserver.videoDrivers = [ "amdgpu" ];
 
+  hardware.openrazer = {
+    enable = true;
+    users = [ "maxim" ];
+  };
+
   security.sudo.wheelNeedsPassword = true;  
 
   users.users.maxim = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" "podman" "video" ];
+    extraGroups = [ "wheel" "networkmanager" "podman" "video" "plugdev" ];
     shell = pkgs.zsh;
   };
 
